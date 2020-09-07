@@ -60,4 +60,9 @@ pipeline {
     }
 
   }
+  post {
+    always {
+      echo 'I did it my way...'
+    }
+  }
 }
