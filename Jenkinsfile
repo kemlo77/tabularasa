@@ -1,7 +1,10 @@
 pipeline {
   agent any
+  options{
+    buildDiscarder(logRotator(numToKeepStr:'5'))
+  }
   stages {
-    stage('Förbereda') {
+    stage('FÃ¶rbereda') {
       parallel {
         stage('Vakna') {
           steps {
@@ -22,9 +25,9 @@ pipeline {
       }
     }
 
-    stage('Utföra') {
+    stage('UtfÃ¶ra') {
       parallel {
-        stage('R�ra') {
+        stage('Röra') {
           steps {
             git(url: 'https://github.com/kemlo77/tabularasa', branch: 'master')
           }
@@ -41,7 +44,7 @@ pipeline {
 
     stage('Njuta') {
       parallel {
-        stage('�ta') {
+        stage('Äta') {
           steps {
             node(label: 'kenny')
             echo 'oj oj vad gott'
