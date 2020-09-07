@@ -46,7 +46,6 @@ pipeline {
       parallel {
         stage('Äta') {
           steps {
-            node(label: 'kenny')
             echo 'oj oj vad gott'
           }
         }
